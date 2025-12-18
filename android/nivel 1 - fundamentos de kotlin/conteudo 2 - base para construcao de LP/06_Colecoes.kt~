@@ -1,0 +1,61 @@
+fun main() {
+
+    //Array
+
+    val array: Array<Int> = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val array2: Array<Int> = arrayOf(11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+
+    println("\nArrays")
+
+    println("array: $array") //printa tipo e posição da memória onde o array2 está armazenado
+    println("array2: " + array2.joinToString(prefix = "[", postfix = "]", separator = "-")) //função para printar array, muito powerful
+
+    val array3 = array + array2
+
+    //consigo add mais itens em um array?
+
+    println("concatenado: " + array3.joinToString())
+
+
+    //List
+    //Diferente do Array, pode adicionar e remover elementos,desde que ele seja mutável
+    val list = listOf(1, 2, "3", 4, "5", 6, 7, 8, 9, 10)
+    val mutableList = mutableListOf(11, 12, 13.87, false, 15, 16, 17, "+18", 19, 20)
+
+    println("\nLists")
+
+    mutableList.add(21)
+
+    println("mutableList add: $mutableList")
+
+    val listInt: List<Int> = list.filterIsInstance<Int>()
+    println("filterIsInstance(): $listInt")
+
+    val listIntsMaioresQue7 = list.filter { it is Int && it > 7 }
+    println("filter(): $listIntsMaioresQue7")
+
+    val listOrganizada = listOf("BETA - Lupusregina", "ALFA - Yuri", "DELTA - CZ")
+    println("sorted(): " + listOrganizada.sorted() + "\nreversed(): " + listOrganizada.reversed()) //sorted() organiza a lista em ordem crescente e reversed() organiza em ordem decrescente
+
+    val intMax = listInt.max()
+    println("maxOf(): $intMax")
+
+    val intMin = listInt.min()
+    println("minOf(): $intMin")
+
+    val intSum = listInt.sum()
+    println("sumOf(): $intSum")
+
+    val intAverage = listInt.average()
+    println("averageOf(): $intAverage")
+
+    val intCount = listInt.count()
+    println("countOf(): $intCount")
+
+    val intFind = listInt.find { it % 2 == 0 }
+    println("find(): $intFind") //encontra o primeiro elemento da lista que seja divisível por 2
+
+    val intFindLast = listInt.findLast { it % 2 == 0 }
+    println("findAll(): $intFindLast") //encontra todos os elementos da lista que seja divisível por 2
+
+}
