@@ -89,5 +89,4 @@ fun main() {
     val dog: Animal = Animal.Dog("Golden Retriever")
     dog.sound()
     handleAnimal(dog)
-
 }

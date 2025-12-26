@@ -2,15 +2,15 @@ data class Produto(
     val id: Int,
     val nome: String,
     val preco: Double,
-    var quantidade: Int
+    var qtd: Int
 )
 
 fun adicionarProduto(): Produto {
 
-    var id: Int = 0
-    var nome: String = ""
-    var preco: Double = 0.0
-    var quantidade: Int = 0
+    var id: Int
+    var nome: String
+    var preco: Double
+    var qtd: Int
 
     do {
         print("Digite o ID do produto: ")
@@ -28,11 +28,11 @@ fun adicionarProduto(): Produto {
     } while (preco < 0)
 
     do {
-        print("Digite a quantidade do produto: ")
-        quantidade = readln().toInt()
-    } while (quantidade < 0)
+        print("Digite a qtd do produto: ")
+        qtd = readln().toInt()
+    } while (qtd < 0)
 
-    val produto = Produto(id, nome, preco, quantidade)
+    val produto = Produto(id, nome, preco, qtd)
 
     return produto
 }
@@ -64,7 +64,7 @@ class ControleDeEstoque {
             println("Estoque vazio!")
         } else {
             for (produto in estoque) {
-                println("ID: ${produto.id}, Nome: ${produto.nome}, Preço: ${produto.preco}, Quantidade: ${produto.quantidade}")
+                println("ID: ${produto.id}, Nome: ${produto.nome}, Preço: ${produto.preco}, Quantidade: ${produto.qtd}")
             }
         }
     }
